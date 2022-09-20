@@ -1,0 +1,23 @@
+<div class="product-list-container">
+    <br>
+    <div class="search-bar">
+        
+        <mat-label><b>Search Product  </b></mat-label>
+        <input type="text" [(ngModel)]="searchText" name="searchText" (keyup)="search(searchText)">
+    </div>
+    <br>
+    <div class="categories-container">
+        <button mat-raised-button color="warn"  class="pByc" (click)="getAllProducts()">All Products  </button>
+        <button mat-raised-button color="primary" class="pByc" *ngFor="let c of categories" (click)="getProductsByCategory(c._id)"> {{c.name}} </button>
+    </div>
+        
+    </div>
+    <br>
+    <div >
+        <app-product-card *ngFor="let p of products" [product]="p" id="{{p._id}}"></app-product-card>
+    </div>
+
+
+
+
+

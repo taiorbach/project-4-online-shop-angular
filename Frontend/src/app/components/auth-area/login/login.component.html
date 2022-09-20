@@ -1,0 +1,30 @@
+<div class="login">
+
+ <form (ngSubmit)="submit()" #formInfo="ngForm">
+    <h2>Login</h2>
+
+  
+
+    <mat-form-field  >
+      <mat-label>Email: </mat-label>
+      <input matInput  type="email" name="email" [(ngModel)]="credentials.email" required  #emailBox="ngModel">
+    </mat-form-field>
+    <span *ngIf="emailBox.touched && emailBox.errors?.['required']">Missing email</span>
+
+    <mat-form-field  >
+      <mat-label>Password: </mat-label>
+      <input matInput matInput type="password" name="password" [(ngModel)]="credentials.password" required minLength="7" #passwordBox="ngModel" >
+    </mat-form-field>
+    <span *ngIf="passwordBox.touched && passwordBox.errors?.['required']">Missing password</span>
+    <span *ngIf="passwordBox.touched && passwordBox.errors?.['min']">Password is too short</span>
+
+   
+    <button type="submit" class="authBtn" mat-raised-button color="primary" [disabled]="formInfo.invalid">Login</button>
+  
+    <button class="authBtn" mat-raised-button  routerLink="/register">Register</button>
+
+
+ </form>
+
+ 
+</div>

@@ -1,0 +1,28 @@
+<div class="box" *ngIf="product">
+
+    
+    <form [formGroup]="productForm" (ngSubmit)="update()">
+        <h2>Update Product</h2>
+
+        <label>Product Name: </label>
+        <input type="text"  [formControl]="nameInput" #nameBox>
+        <span *ngIf="nameInput.touched && nameInput.errors?.['required']">Missing name</span>
+        <span *ngIf="nameInput.touched && nameInput.errors?.['minlength']">Name too short</span>
+        <span *ngIf="nameInput.touched && nameInput.errors?.['maxlength']">Name too long</span>
+
+        <label>Product Price: </label>
+        <input type="number"  [formControl]="priceInput" #priceBox>
+        <span *ngIf="priceInput.touched && priceInput.errors?.['required']">Missing price</span>
+        <span *ngIf="priceInput.touched && priceInput.errors?.['min']">Price can't be 0 or negative</span>
+        <span *ngIf="priceInput.touched && priceInput.errors?.['max']">Price can't exceed 1000</span>
+
+        <label>Product Image: </label>
+        <input type="file"  [formControl]="imageInput" #imageBox>
+
+        <button>Update</button>
+
+
+    </form>
+
+
+</div>

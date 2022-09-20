@@ -1,0 +1,83 @@
+ .order-container{
+    
+    display: flex;
+    justify-content: center;
+    
+}
+
+.form-container{
+   
+  
+    align-items: center;
+}
+
+.btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 60px;
+    font-family: 'Montserrat';
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: rgb(120, 166, 206);
+    
+}
+
+table {
+   
+   
+    margin-left: 40px;
+    border-collapse: collapse;
+    font-family: 'Montserrat';
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: solid black;
+  }
+
+
+th {
+    background-color: rgb(229, 207, 245);
+}
+
+tr:nth-child(odd) {background-color: rgb(238, 233, 233)}
+tr:nth-child(even) {background-color: rgb(194, 218, 225);}
+
+
+
+
+
+form {
+	width: 250px;
+    font-family: 'Montserrat';
+    margin-left: 20px;
+    
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+}
+
+button {
+    width: 100%;
+    margin: 10px 0 20px 0;
+}
+
+span {
+    color: red;
+    margin: 0 20px;
+    position: absolute;
+}
+
+
+
+
+.orderDone{
+    margin-left: 20px;
+}

@@ -1,0 +1,20 @@
+div {
+     display: grid;
+    height: 100%;
+    box-sizing: border-box;
+    grid-template-rows: 15% 
+   
+   
+}
+
+
+
+header {
+    grid-column: span 6;
+   
+}
+
+main {
+    grid-column: span 6;
+    overflow: auto;
+}

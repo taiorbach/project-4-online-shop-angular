@@ -1,0 +1,37 @@
+
+<div class="table-container">
+    <h2>Admin's Page</h2>
+    <mat-drawer-container>
+        <mat-drawer [(opened)]="opened" mode="side">
+            <div class="add">   
+                <app-add-product></app-add-product>
+                 </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="table-container">
+                <button class="addBtn" mat-raised-button color="primary"  (click)="opened=!opened" >
+                  Add Product
+                </button>
+                <table>
+                    <thead>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of products" [id]="p._id" >
+                            <td>{{p.name}}</td>
+                            <td>{{p.price | currency}}</td>
+                            <td>{{p.category.name}}</td>
+                            <td>
+                                <button class="btn" mat-raised-button color="primary" routerLink="/admin/edit/{{p._id}}"><mat-icon>edit</mat-icon></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+</div>

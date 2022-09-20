@@ -1,0 +1,62 @@
+.deleteButton{
+    margin: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    background-color: rgb(120, 166, 206);
+    color: white;
+}
+
+
+
+h2{
+    font-family: 'Montserrat';
+}
+
+.Btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 60px;
+    font-family: 'Montserrat';
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: rgb(120, 166, 206);
+
+   
+}
+
+
+table {
+   margin-left: 50px;
+    border-collapse: collapse;
+    font-family: 'Montserrat';
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: solid black;
+  }
+
+
+th {
+    background-color: rgb(229, 207, 245);
+}
+
+tr:nth-child(odd) {background-color: rgb(238, 233, 233)}
+tr:nth-child(even) {background-color: rgb(194, 218, 225);}
+
+.updateBtn{
+    margin-top:5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-left: 1px;
+    background-color: rgb(120, 166, 206);
+    color: white;
+}
+
+.cart-container{
+    height: 100%;
+    width: 100%;
+}
+
+

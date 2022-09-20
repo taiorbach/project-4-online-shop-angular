@@ -1,0 +1,21 @@
+input {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-family: 'Montserrat';
+}
+
+h2{
+    font-family: 'Montserrat';
+}
+
+button{
+    
+    margin-left: 20px;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: rgb(120, 166, 206);
+    color: white;
+}

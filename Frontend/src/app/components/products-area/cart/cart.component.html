@@ -1,0 +1,39 @@
+<div class="cart-container">
+    <h2>Cart check-out</h2>
+    <div >
+        <div class="cart-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Change Quantity</th>
+                        <th>Delete</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cp of cartProducts" [id]="cp._id">
+                        <td >{{cp.name}}</td>
+                        <td > {{cp.quantity}} </td>
+                        <td>{{cp.totalPrice | currency }}</td>
+                        <td><span><input type="number" step="1.00" min="1" max="100" [(ngModel)]="cp.quantity"><button class="updateBtn" (click)="updateCartProduct(cp)">Update</button></span></td>
+                        <td><button mat-raised-button color="primary" class="deleteButton" (click)="removeProductFromCart(cp._id)"><mat-icon>delete</mat-icon></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <span>---------------------</span>
+        <div class="totalPrice">
+         <b>Total Price:   {{totalPrice | currency}}</b>
+        </div>
+        <br>
+        <button class="Btn"  mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
+        <button class="Btn"  mat-raised-button color="primary"  (click)="order()">Order</button>
+        
+    </div>
+        
+</div>
+

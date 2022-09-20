@@ -1,0 +1,46 @@
+.shop{
+height: 100%;
+
+}
+button{
+   margin-top: 5px;
+   background-color: rgb(120, 166, 206);
+   border-radius: 10px;
+   color: white;
+   float: left;
+   margin-left: 40px;
+   
+    
+}
+
+mat-icon{
+   margin: 1px;
+}
+
+.cart-container{
+   margin-right: 50px;
+   height: 100%;
+   
+}
+
+mat-drawer-container{
+   height: 100%;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

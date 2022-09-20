@@ -1,0 +1,15 @@
+
+
+      <div class="box">
+
+        <img mat-card-image [src]="productImageUrl + product.imageName"/>
+        <br>
+        <span class="details">{{product.name}}</span><br>
+        <span class="details">{{product.price | currency}}</span><br>
+        <button class="details dialog" mat-raised-button color="primary" (click)="openDialog()">Buy Me</button>
+
+
+      </div>
+
+
+    

@@ -1,0 +1,79 @@
+<div class="register-container">
+    <div class="register-step-one">
+    <form (ngSubmit)="checkIdNumber()" #formInfo="ngForm" >
+
+        <h2>Register: Step 1</h2>
+        <hr>
+
+        <mat-form-field  >
+            <mat-label>ID number: </mat-label>
+            <input matInput  type="text" name="idNumber" [(ngModel)]="user.idNumber" required minLength="9" maxlength="9" pattern="^(0|[1-9][0-9]*)$" [disabled]="stepOne == true" #idNumberBox="ngModel">
+        </mat-form-field>
+            <span *ngIf="idNumberBox.touched && idNumberBox.errors?.['required']">Missing ID number</span>
+            <span *ngIf="idNumberBox.touched && idNumberBox.errors?.['minLength']">ID number is too short</span>
+            <span *ngIf="idNumberBox.touched && idNumberBox.errors?.['maxlength']">ID number is too long</span>
+            <span *ngIf="idNumberBox.touched && idNumberBox.errors?.['pattern']">ID number must be numerical</span>
+            
+
+        <mat-form-field  >
+            <mat-label>Email: </mat-label>
+            <input matInput  type="email" name="email"  [(ngModel)]="user.email" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" [disabled]="stepOne == true" #emailBox="ngModel">
+        </mat-form-field>
+        <span *ngIf="emailBox.touched && emailBox.errors?.['required']">Missing email</span>
+        <span *ngIf="emailBox.touched && emailBox.errors?.['pattern']">Not a valid email form.</span>
+
+        <mat-form-field  >
+            <mat-label>Password: </mat-label>
+            <input matInput  type="password" name="password" [(ngModel)]="user.password" required minLength="7" [disabled]="stepOne == true"  #passwordBox="ngModel">
+        </mat-form-field>
+        <span *ngIf="passwordBox.touched && passwordBox.errors?.['required']">Missing password</span>
+        <span *ngIf="passwordBox.touched && passwordBox.errors?.['min']">Password is too short</span>
+
+       
+
+        <button class="step1" type="submit" mat-raised-button color="primary" [disabled]="formInfo.invalid" >Go to step 2</button>
+
+    </form>
+    </div>
+
+
+
+<div class="register-step-two">
+    <form (ngSubmit)="submit()" #formInfo="ngForm"  *ngIf="stepOne == true">
+
+        <h2>Register: Step 2</h2>
+        <hr>
+
+        <mat-form-field  >
+            <mat-label>First Name: </mat-label>
+            <input matInput  type="text" name="firstName" [(ngModel)]="user.firstName" required  #firstNameBox="ngModel">
+        </mat-form-field>
+        <span *ngIf="firstNameBox.touched && firstNameBox.errors?.['required']">Missing email</span>
+
+        <mat-form-field  >
+            <mat-label>Last Name: </mat-label>
+            <input matInput  type="text" name="lastName" [(ngModel)]="user.lastName" required  #lastNameBox="ngModel">
+        </mat-form-field>
+        <span *ngIf="lastNameBox.touched && lastNameBox.errors?.['required']">Missing email</span>
+
+        <mat-form-field  >
+            <mat-label>City: </mat-label>
+            <input matInput  type="text" name="city" [(ngModel)]="user.city" required minLength="9" #cityBox="ngModel">
+        </mat-form-field>
+            <span *ngIf="cityBox.touched && cityBox.errors?.['required']">Missing ID number</span>
+            <span *ngIf="cityBox.touched && cityBox.errors?.['min']">ID number is too short</span>
+
+        <mat-form-field  >
+            <mat-label>Street: </mat-label>
+            <input matInput  type="text" name="street" [(ngModel)]="user.street" required  #streetBox="ngModel">
+        </mat-form-field>
+        <span *ngIf="streetBox.touched && streetBox.errors?.['required']">Missing email</span>
+        
+
+        <button class="step2" type="submit" mat-raised-button color="primary" [disabled]="formInfo.invalid" >Submit</button>
+
+    </form>
+
+</div>
+
+</div>

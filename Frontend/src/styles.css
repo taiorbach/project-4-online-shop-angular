@@ -1,0 +1,30 @@
+
+
+html, body  { 
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    background-color: white;
+    font-family: 'Montserrat';
+    
+    
+}
+
+
+.highlight {
+    background-color: rgb(227, 238, 130);
+    font-weight: bold;
+  }
+
+
+.box {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 10px;
+    border-radius: 4px;
+    text-align: left;
+    
+    
+}

@@ -1,0 +1,43 @@
+
+
+
+ div.box {
+	background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-family: 'Montserrat';
+   
+} 
+
+img {
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 10px;
+    vertical-align: middle;
+    background-color: white;
+ 
+}
+
+.details{
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+    
+    
+   
+}
+
+.dialog{
+    font-family: 'Montserrat';
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: rgb(120, 166, 206);
+    color: white;
+    
+    
+}
+
+
+
+

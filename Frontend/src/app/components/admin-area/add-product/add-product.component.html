@@ -1,0 +1,48 @@
+<div class="box">
+
+    <form (ngSubmit)="add()" #formInfo="ngForm">
+
+        <h2>Add Product</h2>
+
+        <label>Product Name: </label>
+        <input  type="text" name="name" [(ngModel)]="product.name" required minlength="3" maxlength="30" #nameBox="ngModel">
+        <span *ngIf="nameBox.touched && nameBox.errors?.['required']">Missing name</span>
+        <span *ngIf="nameBox.touched && nameBox.errors?.['minlength']">Name too short</span>
+        <span *ngIf="nameBox.touched && nameBox.errors?.['maxlength']">Name too long</span>
+
+        <label>Product Price: </label>
+        <input type="number" step="0.01" name="price" [(ngModel)]="product.price" required min="0.1" max="1000" #priceBox="ngModel">
+        <span *ngIf="priceBox.touched && priceBox.errors?.['required']">Missing price</span>
+        <span *ngIf="priceBox.touched && priceBox.errors?.['min']">Price can't be 0 or negative</span>
+        <span *ngIf="priceBox.touched && priceBox.errors?.['max']">Price can't exceed 1000</span>
+
+        <label>Category: </label>
+        <select name="category" required [(ngModel)]="product.categoryId" #categoryBox="ngModel">
+            <option disabled selected>Select Category</option>
+            <option *ngFor="let c of categories" [value]="c._id" >{{c.name}}</option>
+        </select>
+        <br>
+        <br>
+
+        <label>Product Image: </label>
+        <input type="file" name="image" accept="image/*" #imageBox>
+
+
+        <button [disabled]="formInfo.invalid">Add</button>
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+</div>

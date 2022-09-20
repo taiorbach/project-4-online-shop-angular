@@ -1,0 +1,81 @@
+<div class="order-container">
+        <div class="table-container">
+
+            <mat-form-field appearance="fill" >
+                <mat-label>Search Product</mat-label>
+                <input matInput type="text" name="searchString" [(ngModel)]="searchString"  >
+              </mat-form-field>
+
+
+            <table class="order-table">         
+                <thead>                   
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let cp of cartProducts">
+                    <td [innerHTML]="cp.products.name | highlightSearch: searchString"></td>
+                    <td>{{cp.quantity}}</td>
+                    <td>{{cp.products.price}}</td>
+                    <td>{{cp.totalPrice}}</td>
+                </tr>
+                </tbody>
+                <br>
+                <div><b>Total Price : {{getTotalPrice(cartProducts) | currency}}</b> </div>
+            </table>
+        </div>         
+        <div class="form-container">
+            <form (ngSubmit)="orderNow()" #formInfo="ngForm">
+                <br>
+                <p><b>Customer full name: </b>{{user.firstName +" "+ user.lastName}}</p>
+                <br>
+                <p><b>Customer Email: </b>{{user.email}}</p>
+                <br>
+                <br>
+
+                <mat-form-field  >
+                    <mat-label>City: </mat-label>
+                    <input matInput  type="text" name="city" [(ngModel)]="order.city" required  #cityBox="ngModel">
+                </mat-form-field>
+                <span *ngIf="cityBox.touched && cityBox.errors?.['required']">Missing city</span>
+
+                <mat-form-field  >
+                    <mat-label>Street: </mat-label>
+                    <input matInput  type="text" name="street" [(ngModel)]="order.street" required  #streetBox="ngModel">
+                </mat-form-field>
+                <span *ngIf="streetBox.touched && streetBox.errors?.['required']">Missing street</span>
+
+                <mat-form-field  >
+                    <mat-label>Delivry Date: </mat-label>
+                    <input matInput  type="date" min="{{currentDate | date: 'yyyy-MM-dd'}}" name="dateToDeliver" [(ngModel)]="order.dateToDeliver" required  #dateToDeliverBox="ngModel">
+                </mat-form-field>
+                <span *ngIf="dateToDeliverBox.touched && dateToDeliverBox.errors?.['required']">Missing date to deliver</span>
+
+                <mat-form-field  >
+                    <mat-label>Card Four Last Digits: </mat-label>
+                    <input matInput  type="text" name="lastNumbersInCard" pattern="^[0-9]{4}$" [(ngModel)]="order.lastNumbersInCard" required minlength="4" maxlength="4" #lastNumbersInCardBox="ngModel">
+                </mat-form-field>
+                <span *ngIf="lastNumbersInCardBox.touched && lastNumbersInCardBox.errors?.['required']">Missing card number</span>
+                <span *ngIf="lastNumbersInCardBox.touched && lastNumbersInCardBox.errors?.['minlength']">Card number is too short</span>
+                <span *ngIf="lastNumbersInCardBox.touched && lastNumbersInCardBox.errors?.['pattern']">Card number must be a number</span>
+
+                
+                <button type="submit" class="btn" mat-raised-button color="primary" [disabled]="formInfo.invalid">Order</button>
+                <button type="button" class="btn" mat-raised-button color="primary" (click)="backToShop()">Back to shopping</button>
+                
+            </form>
+
+        </div>
+    
+       
+          
+ </div>
+     
+
+        
+

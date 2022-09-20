@@ -1,0 +1,41 @@
+.authBtn{
+    
+    width: 100%;
+    margin: 10px 0 20px 0;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: rgb(120, 166, 206);
+    color: white;
+    
+}
+
+form {
+	width: 250px;
+    
+    
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat';
+    
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    
+    
+}
+
+
+
+span {
+    color: red;
+    margin: 0 20px;
+    position: absolute;
+}
+
+
